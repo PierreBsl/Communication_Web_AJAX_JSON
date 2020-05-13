@@ -18,6 +18,7 @@ function ajaxRequest(type, url, callback){
 }
 
 function main(){
-    setInterval(ajaxRequest,1,'GET','php/timestamp.php',updateTime);
+    setInterval(ajaxRequest, 1, 'GET', 'php/errors.php', updateTime);
+    setInterval(ajaxRequest, 1, 'GET', 'php/timestamp.php', updateTime);
 }
 main();
