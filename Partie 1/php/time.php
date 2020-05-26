@@ -11,5 +11,5 @@
 
   $tab= array('"Il est : '.$d.'", ', $json);
   echo $tab[0],$tab[1];
-  return $tab;
+  //return $tab;
 ?>

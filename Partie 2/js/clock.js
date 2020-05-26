@@ -25,7 +25,7 @@ function displayClock(time)
   drawBackground(context, radius);
   drawNumbers(context, radius);
   // Call the drawHands function
-  // drawHands (....)
+  drawHands (context, radius,time);
   context.setTransform(1, 0, 0, 1, 0, 0);
 }
 
@@ -101,9 +101,9 @@ function drawHands(context, radius, time)
   let seconds;
 
   // Get data (hours, minutes and seconds).
-  // hours = ...;
-  // minutes = ...;
-  // seconds = ...;
+  hours = time["hours"];
+  minutes = time["minutes"];
+  seconds = time["seconds"];
 
   // Hours.
   hours %= 12;

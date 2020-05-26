@@ -1,15 +1,17 @@
 <?php
-  // Generate timestamp.
-  $today = getdate();
-  $hours = $today[hours];
-  $minutes = $today[minutes];
-  $seconds = $today[seconds];
-  $d = $hours.':'.$minutes.':'.$seconds;
-  $date = array('hours' => $hours, 'minutes' => $minutes,'seconds' => $seconds, );
-
-  $json = json_encode($date);
-
-  $tab= array('"Il est : '.$d.'", ', $json);
-  echo $tab[0],$tab[1];
-  return $tab;
+    $currentHour = getdate();
+    $hour = $currentHour['hours'];
+    $min = $currentHour['minutes'];
+    $sec = $currentHour['seconds'];
+    if($min < 10){
+        $min = "0".$min;
+    }
+    $string = "Il est " . $hour . ":" . $min . ":" . $sec;
+    $data = array($string,array(
+        "hours" => $hour, 
+        "minutes" => $min,
+        "seconds"=> $sec
+    ));
+    $json = json_encode($data);
+    echo $json;
 ?>
